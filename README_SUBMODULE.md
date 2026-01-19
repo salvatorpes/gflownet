@@ -12,7 +12,7 @@ The forked repository has a branch `neurosynth_fin` where my edits are and chang
 
 ---
 
-## One-time setup (already done)
+## One-time setup (already done - don't redo)
 ```bash
 cd NeuroSynth-Fin
 
@@ -33,17 +33,19 @@ git push -u origin neurosynth_fin
 ## Pulling in upstream changes
 ```bash
 cd external/gflownet
-git fetch upstream
 git checkout main
+git fetch upstream
 git merge upstream/main
+git push origin main
 ```
 
 ## Pushing changes to my fork (neurosynth_fin branch)
 ```bash
 cd external/gflownet
 git checkout neurosynth_fin
+# edit files
 git commit -am "Describe changes"
-git push 
+git push origin neurosynth_fin
 ```
 
 ## Updating my branch with upstream changes
@@ -52,23 +54,14 @@ cd external/gflownet
 git checkout neurosynth_fin
 git fetch upstream
 git merge upstream/main
-# resolve any merge conflicts if necessary
+# resolve conflicts if necessary
 git push origin neurosynth_fin
-```
-
-## Updating main branch of main project to the upstream changes
-```bash
-cd external/gflownet
-git checkout main
-git fetch upstream
-git merge upstream/main
-git push origin main
 ```
 
 ## Updating this submodule reference in the main project
 ```bash
 cd NeuroSynth-Fin
 git add external/gflownet
-git commit -m "Update gflownet submodule to latest"
+git commit -m "Update gflownet submodule"
 git push
 ```

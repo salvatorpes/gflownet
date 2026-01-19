@@ -39,15 +39,6 @@ git merge upstream/main
 git push origin main
 ```
 
-## Pushing changes to my fork (neurosynth_fin branch)
-```bash
-cd external/gflownet
-git checkout neurosynth_fin
-# edit files
-git commit -am "Describe changes"
-git push origin neurosynth_fin
-```
-
 ## Updating my branch with upstream changes
 ```bash
 cd external/gflownet
@@ -58,10 +49,20 @@ git merge upstream/main
 git push origin neurosynth_fin
 ```
 
-## Updating this submodule reference in the main project
+The two following sections are the most important for regular use since they describe how to push changes to the fork and update the main project to point to the new submodule commit.
+
+# Pushing changes to my fork (neurosynth_fin branch)
+```bash
+cd external/gflownet
+git checkout neurosynth_fin
+# edit files
+git commit -am "Describe changes"
+git push origin neurosynth_fin
+```
+
+# Updating this submodule reference in the main project
 ```bash
 cd NeuroSynth-Fin
 git add external/gflownet
 git commit -m "Update gflownet submodule"
-git push
 ```
